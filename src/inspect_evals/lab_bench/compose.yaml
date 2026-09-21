@@ -1,0 +1,15 @@
+# One compose file shared by every sample. The image is supplied at run time via
+# LABBENCH_SANDBOX_IMAGE, which the task copies into each sample's metadata; the
+# sandbox provider substitutes it here. See README.md.
+services:
+  default:
+    image: ${SAMPLE_METADATA_LABBENCH_IMAGE}
+    init: true
+    command: tail -f /dev/null
+    # The code-tools tasks allow internet access (curl, pip, web lookups).
+    network_mode: bridge
+    # Model-authored code runs here and inspect runs many sandboxes in parallel,
+    # so both are capped. The bio stack needs more than ds1000 and class_eval
+    # (1.0/0.5gb) and less than scbench (4.0/16gb).
+    cpus: 2.0
+    mem_limit: 4gb

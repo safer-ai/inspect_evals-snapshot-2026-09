@@ -1,0 +1,10 @@
+# One compose file shared by every sample. Each problem's data is baked into its own
+# image; the image tag comes from the sample's metadata (BMB_IMAGE), which the runner
+# substitutes here. See README.md.
+services:
+  default:
+    image: ${SAMPLE_METADATA_BMB_IMAGE}
+    init: true
+    command: tail -f /dev/null
+    # The model needs NCBI, Ensembl, UniProt and the conda/pip channels.
+    network_mode: bridge

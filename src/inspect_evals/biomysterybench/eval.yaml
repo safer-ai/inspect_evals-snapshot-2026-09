@@ -1,0 +1,33 @@
+title: 'BioMysteryBench: Open-ended Bioinformatics Analysis'
+description: |
+  Anthropic's open-ended agentic bioinformatics benchmark. Each problem provides a real,
+  anonymized biological dataset (DNA/RNA sequencing, proteomics, metabolomics, methylation,
+  ChIP-seq, ...) and asks a question that requires analysis to answer; the source dataset 
+  cannot be looked up. The model works in a sandbox with bioinformatics tools and 
+  internet access to NCBI/Ensembl/etc., then submits a free-form answer graded by a model 
+  judge against the problem's rubric.
+group: Knowledge
+contributors:
+  - 'jacobdaviessafer'
+version: "1-A"
+tasks:
+  - name: bio_mystery_bench
+    dataset_samples: 90
+tags:
+  - Agent
+metadata:
+  environment: bioinformatics
+  requires_internet: true
+  sandbox:
+    - solver
+external_assets:
+  - type: huggingface
+    source: "Anthropic/BioMysteryBench-full"
+    fetch_method: hf_hub_download
+    state: pinned
+    comment: "gated dataset; pinned revision b5a889c4757214ec9a6ade876b734f920a7799db (needs HF_TOKEN)"
+  - type: huggingface
+    source: "Anthropic/BioMysteryBench-preview"
+    fetch_method: hf_hub_download
+    state: pinned
+    comment: "open 5-problem sample; pinned revision 51c9024021b8989a0cb06ae623b02f90d14c2da3"
