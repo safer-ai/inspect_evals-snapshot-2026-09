@@ -1,5 +1,5 @@
 > [!NOTE]
-> **One-time snapshot from SaferAI, 2026-09-21.** Single commit, no history, not maintained. See [SNAPSHOT.md](SNAPSHOT.md) for what SaferAI added (BioMysteryBench, LAB-Bench code-tools) and how to run BioMysteryBench outside SaferAI's infrastructure.
+> **One-time snapshot from SaferAI, 2026-09-21.** Not maintained. See [SNAPSHOT.md](SNAPSHOT.md) for what SaferAI added (BioMysteryBench, LAB-Bench code-tools) and how to run BioMysteryBench and other agentic evals outside SaferAI's infrastructure.
 
 [<img width="295" src="https://inspect.ai-safety-institute.org.uk/images/aisi-logo.svg" alt="UK AISI Logo"/>](https://aisi.gov.uk/)<!-- markdownlint-disable-line MD033 MD041 -->
 
